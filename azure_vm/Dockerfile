@@ -1,3 +1,4 @@
+# Use Python 3.9 slim image
 FROM python:3.9-slim-buster
 
 # Install nginx and other dependencies
@@ -9,7 +10,7 @@ COPY . /app
 WORKDIR /app
 
 # Install the required Python packages
-RUN pip install flask azure-identity azure-mgmt-compute azure-mgmt-resource gunicorn
+RUN pip install flask azure-identity azure-mgmt-compute azure-mgmt-resource azure-mgmt-network gunicorn
 
 # Replace the default nginx.conf with our custom nginx.conf
 RUN rm /etc/nginx/sites-enabled/default
@@ -20,5 +21,4 @@ RUN ln -s /etc/nginx/sites-available/flask.conf /etc/nginx/sites-enabled/flask.c
 EXPOSE 80
 
 # Start nginx and the Flask app
-CMD service nginx start && gunicorn --workers 3 --bind unix:app.sock azure_vm:app
-
+CMD service nginx start && gunicorn --workers 3 --bind unix:app.sock azure_ips:app
