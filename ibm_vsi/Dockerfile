@@ -9,7 +9,7 @@ COPY . /app
 WORKDIR /app
 
 # Install the required Python packages
-RUN pip install flask ibm-cloud-sdk-core ibm-vpc
+RUN pip install --no-cache-dir flask ibm-cloud-sdk-core ibm-vpc python-socketio gunicorn
 
 # Replace the default nginx.conf with our custom nginx.conf
 RUN rm /etc/nginx/sites-enabled/default
@@ -19,6 +19,6 @@ RUN ln -s /etc/nginx/sites-available/flask.conf /etc/nginx/sites-enabled/flask.c
 # Expose port 80
 EXPOSE 80
 
-# Start nginx and the Flask app
-CMD service nginx start && python ibm_vsi.py
-
+# Start nginx and the Flask app using Gunicorn
+#CMD service nginx start && gunicorn ibm_ips:app -b 127.0.0.1:5000
+CMD service nginx start && python ibm_ips.py

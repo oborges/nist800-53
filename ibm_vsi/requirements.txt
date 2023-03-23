@@ -1,5 +1,0 @@
-Flask
-ibm-cloud-sdk-core
-ibm-vpc
-uwsgi
-
