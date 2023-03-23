@@ -2,6 +2,7 @@ import os
 import time
 import socket
 from flask import Flask, jsonify
+from flask_cors import CORS
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from ibm_vpc import VpcV1
 from threading import Thread
@@ -10,6 +11,7 @@ from threading import Thread
 open_ips = []
 
 app = Flask(__name__)
+CORS(app)
 
 def capture_floating_ips():
     api_key = os.environ['IBM_API_KEY']

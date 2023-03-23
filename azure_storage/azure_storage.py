@@ -2,10 +2,12 @@ from azure.identity import ClientSecretCredential
 from azure.mgmt.storage import StorageManagementClient
 from azure.storage.blob import BlobServiceClient, PublicAccess
 from flask import Flask, jsonify
+from flask_cors import CORS
 import re
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 #get credentials from environment variables
 client_id = os.environ['AZURE_CLIENT_ID']

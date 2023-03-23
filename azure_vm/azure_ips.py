@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 from azure.identity import ClientSecretCredential
 from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.compute import ComputeManagementClient
@@ -7,6 +8,7 @@ import os
 import socket
 
 app = Flask(__name__)
+CORS(app)
 
 #get credentials from environment variables
 client_id = os.environ['AZURE_CLIENT_ID']
