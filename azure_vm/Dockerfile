@@ -10,7 +10,7 @@ COPY . /app
 WORKDIR /app
 
 # Install the required Python packages
-RUN pip install flask azure-identity azure-mgmt-compute azure-mgmt-resource azure-mgmt-network gunicorn
+RUN pip install flask flask_cors azure-identity azure-mgmt-compute azure-mgmt-resource azure-mgmt-network gunicorn
 
 # Replace the default nginx.conf with our custom nginx.conf
 RUN rm /etc/nginx/sites-enabled/default

@@ -9,7 +9,7 @@ COPY . /app
 WORKDIR /app
 
 # Install the required Python packages
-RUN pip install --no-cache-dir flask ibm-cloud-sdk-core ibm-vpc python-socketio gunicorn
+RUN pip install --no-cache-dir flask flask_cors ibm-cloud-sdk-core ibm-vpc python-socketio gunicorn
 
 # Replace the default nginx.conf with our custom nginx.conf
 RUN rm /etc/nginx/sites-enabled/default

@@ -9,7 +9,7 @@ COPY . /app
 WORKDIR /app
 
 # Install the required Python packages
-RUN pip install flask azure-identity azure-mgmt-authorization msgraph-core
+RUN pip install flask flask_cors azure-identity azure-mgmt-authorization msgraph-core
 
 # Replace the default nginx.conf with our custom nginx.conf
 RUN rm /etc/nginx/sites-enabled/default
