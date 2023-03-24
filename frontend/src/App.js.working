@@ -1,0 +1,39 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header>
+        <h1>Open-source multi-cloud solution to check subset of NIST 800-53 controls compliance</h1>
+      </header>
+      <main>
+        <div className="square">
+          <Link to="https://frontend-vm.10dwywumq902.us-south.codeengine.appdomain.cloud/">
+            <img src="https://via.placeholder.com/150" alt="Virtual Machines"/>
+            <h2>Virtual Machines</h2>
+            <div className="overlay"></div>
+          </Link>
+        </div>
+        <div className="square">
+          <Link to="http://tobedefined.com">
+            <img src="https://via.placeholder.com/150" alt="Object Storage"/>
+            <h2>Object Storage</h2>
+            <div className="overlay"></div>
+          </Link>
+        </div>
+        <div className="square">
+          <Link to="http://tobedefined.com">
+            <img src="https://via.placeholder.com/150" alt="Identity and Access Management"/>
+            <h2>Identity and Access Management</h2>
+            <div className="overlay"></div>
+          </Link>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+export default App;
+

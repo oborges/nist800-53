@@ -1,16 +1,39 @@
 import React from 'react';
-import Panel from './components/Panel';
-import './styles.css';
+import { Link } from 'react-router-dom';
+import './App.css';
+import TravelExploreIcon from './images/travelexplore.svg';
+import FolderSupervisedIcon from './images/foldersupervised.svg';
+import AdminPanelSettingsIcon from './images/adminpanel.svg';
 
 function App() {
   return (
-    <div className="container">
-      <Panel title="Virtual Machines - SC-7: Boundary Control (IBM Cloud)" endpoint="https://ibmvsi.10dwywumq902.us-south.codeengine.appdomain.cloud/open_ips" />
-      <Panel title="Object Storage - AC-3: Access Enforcement (IBM Cloud)" endpoint="https://ibmstorage.10dwywumq902.us-south.codeengine.appdomain.cloud/public_buckets" />
-      <Panel title="IAM - AC-2: Account Management (IBM Cloud)" endpoint="https://ibmadministrators.10dwywumq902.us-south.codeengine.appdomain.cloud/ibm_administrators" />
-      <Panel title="Virtual Machines - SC-7: Boundary Control (Azure)" endpoint="https://azurevm.10dwywumq902.us-south.codeengine.appdomain.cloud/azure_open_ips" />
-      <Panel title="Object Storage - AC-3: Access Enforcement (Azure)" endpoint="https://azurestorage.10dwywumq902.us-south.codeengine.appdomain.cloud/list_blobs" />
-      <Panel title="IAM - AC-2: Account Management (Azure)" endpoint="https://azureadministrators.10dwywumq902.us-south.codeengine.appdomain.cloud/azureadministrators" />
+    <div className="App">
+      <header>
+        <h1>Open-source multi-cloud solution to check subset of NIST 800-53 controls compliance</h1>
+      </header>
+      <main>
+        <div className="square light">
+          <a href="https://frontend-vm.10dwywumq902.us-south.codeengine.appdomain.cloud/" target="_blank" rel="noopener noreferrer">
+            <img src={TravelExploreIcon} alt="Virtual Machines"/>
+            <h2>Virtual Machines</h2>
+            <div className="overlay"></div>
+          </a>
+        </div>
+        <div className="square light">
+          <a href="http://tobedefined.com" target="_blank" rel="noopener noreferrer">
+            <img src={FolderSupervisedIcon} alt="Object Storage"/>
+            <h2>Object Storage</h2>
+            <div className="overlay"></div>
+          </a>
+        </div>
+        <div className="square light">
+          <a href="http://tobedefined.com" target="_blank" rel="noopener noreferrer">
+            <img src={AdminPanelSettingsIcon} alt="Identity and Access Management"/>
+            <h2>Identity and Access Management</h2>
+            <div className="overlay"></div>
+          </a>
+        </div>
+      </main>
     </div>
   );
 }
