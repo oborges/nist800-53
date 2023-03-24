@@ -20,5 +20,4 @@ RUN ln -s /etc/nginx/sites-available/flask.conf /etc/nginx/sites-enabled/flask.c
 EXPOSE 80
 
 # Start nginx and the Flask app
-CMD service nginx start && gunicorn --workers 3 --bind unix:app.sock azure_storage:app
-
+CMD service nginx start && gunicorn azure_storage:app -b 127.0.0.1:5000
