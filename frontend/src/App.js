@@ -20,7 +20,7 @@ function App() {
           </a>
         </div>
         <div className="square light">
-          <a href="http://tobedefined.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://frontend-storage.10dwywumq902.us-south.codeengine.appdomain.cloud/" target="_blank" rel="noopener noreferrer">
             <img src={FolderSupervisedIcon} alt="Object Storage"/>
             <h2>Object Storage</h2>
             <div className="overlay"></div>
