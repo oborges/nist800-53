@@ -2,7 +2,7 @@ import React from 'react';
 import IBMIAMPanel from './IBMIAMPanel';
 import AzureIAMPanel from './AzureIAMPanel';
 import './styles.css';
-import logo from './images/storagesecurity.jpg';
+import logo from './images/iamsecurity.jpg';
 import './App.css';
 
 const App = () => {
